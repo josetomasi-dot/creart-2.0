@@ -1,0 +1,145 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  min-width: 320px;
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-paper-100);
+  background:
+    radial-gradient(circle at top left, rgba(224, 191, 136, 0.17), transparent 28%),
+    radial-gradient(circle at 85% 18%, rgba(175, 138, 115, 0.14), transparent 24%),
+    linear-gradient(180deg, #090a0d 0%, #11141a 38%, #07080b 100%);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 5rem 5rem;
+  mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.35), transparent 78%);
+  opacity: 0.16;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button,
+a,
+input,
+textarea {
+  transition:
+    transform var(--transition-base),
+    opacity var(--transition-base),
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+main {
+  overflow: clip;
+}
+
+section {
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+h1 {
+  font-size: var(--font-size-2xl);
+  line-height: var(--line-height-tight);
+  max-width: 10ch;
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+  line-height: var(--line-height-snug);
+  max-width: 12ch;
+}
+
+h3 {
+  font-size: clamp(1.35rem, 1vw + 1.1rem, 2rem);
+  line-height: 1.05;
+}
+
+p {
+  max-width: 64ch;
+  color: var(--color-paper-200);
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--color-line-soft);
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.035);
+  padding: 1rem 1rem 1.05rem;
+  color: var(--color-paper-100);
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(223, 211, 194, 0.5);
+}
+
+input:focus,
+textarea:focus {
+  border-color: rgba(224, 191, 136, 0.45);
+  box-shadow: 0 0 0 4px rgba(224, 191, 136, 0.08);
+}
+
+.container {
+  width: min(calc(100% - 1.5rem), var(--container-max));
+  margin: 0 auto;
+}
+
+.section {
+  padding: var(--section-y) 0;
+}
+
+.section--compact {
+  padding: var(--section-y-compact) 0;
+}
